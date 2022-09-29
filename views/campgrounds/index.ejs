@@ -1,0 +1,25 @@
+
+    <% layout('layouts/boilerplate') %> 
+    <h1>Liste des candidatures</h1>
+    <a class="btn btn-success" href="/campgrounds/new">Ajouter Candidature</a>
+  
+        <% for (let campground of campgrounds) { %> 
+            <div class="card" mb-3>
+                <div class="row">
+                    <div class="col-md-4">
+
+                    </div> 
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= campground.name %> </h5>
+                                <p class="card-text"><%= campground.studentID %></p>
+                                <p class="card-text">
+                                    <small class="text-muted"><%= campground.mail %></small>
+                                </p>
+                                <a class="btn btn-primary" href="/campgrounds/<%= campground._id %> ">Voir <%= campground.name %> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %> 
+ 
